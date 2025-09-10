@@ -36,7 +36,7 @@
     body {
       background-color: white;
       color: black;
-      animation: bgColorChange 15s infinite alternate; /* slower */
+      animation: bgColorChange 15s infinite alternate;
     }
     @keyframes bgColorChange {
       from { background-color: white; }
@@ -78,7 +78,6 @@
     .large2:hover {
       background-color: darkgreen;
     }
-    /* Image upload preview */
     #image-preview {
       margin-top: 15px;
       max-width: 300px;
@@ -105,15 +104,12 @@
   <section id="introduction">
     <h2 align="center"><u>About me</u></h2>
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
-      <!-- About Me Text -->
       <p style="flex:1; font-size:20px;">
         Hello! My name is <b>Devansh Dhama</b> and I am currently pursuing my B.Tech from ABES Engineering College in CSE. 
         I am passionate about cloud engineering and full stack development. I have completed certifications that strengthened my practical knowledge. 
         I am always eager to explore new technologies and apply them in real projects. 
         My goal is to become an innovative developer who can create impactful, user-friendly solutions.
       </p>
-
-      <!-- Profile Image on Right -->
       <img src="https://via.placeholder.com/200" alt="Profile Picture" 
            style="width:200px; height:200px; object-fit:cover; border-radius:10px; flex-shrink:0;">
     </div>
@@ -141,8 +137,7 @@
     </ul>
   </section>
   <hr>
-
-  <div id="me">
+ <div id="me">
     <h1 align="center"><u><b>Contact</b></u></h1>
   </div>
   <div id="contact">
@@ -155,8 +150,6 @@
 
       <label for="message">Enter your message:</label><br>
       <textarea name="message" rows="4" cols="50" placeholder="Enter your message here..."></textarea><br>
-
-      <!-- Image Upload -->
       <label for="upload">Upload your image:</label><br>
       <input type="file" id="upload" accept="image/*"><br>
       <img id="image-preview" src="#" alt="Image Preview" style="display:none;">
@@ -167,7 +160,6 @@
   </div>
 
   <script>
-    // Image preview function
     document.getElementById("upload").addEventListener("change", function(event) {
       const file = event.target.files[0];
       if (file) {
