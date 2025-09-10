@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    h1 {
+      height: 50px;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #333;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .navbar a {
+      display: inline-block;
+      color: aliceblue;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    .navbar a:hover {
+      background-color: #573357;
+      color: yellowgreen;
+    }
+    .navbar a.active {
+      background-color: rebeccapurple;
+      color: azure;
+    }
+    body {
+      background-color: white;
+      color: black;
+      animation: bgColorChange 15s infinite alternate; /* slower */
+    }
+    @keyframes bgColorChange {
+      from { background-color: white; }
+      to { background-color: #e0c3fc; }
+    }
+    @media only screen and (max-width: 600px) {
+      .boxes {
+        flex-direction: column;
+      }
+    }
+    #introduction, #skills, #projects, #me, #contact {
+      margin: 20px;
+    }
+    #introduction, #skills, #projects {
+      font-size: 30px;
+    }
+    #projects ul li, #skills ul li {
+      font-size: 22px;
+      margin-left: 40px;
+    }
+    #contact {
+      font-size: 22px;
+    }
+    .large, .large1 {
+      width: 90%;
+      max-width: 600px;
+    }
+    .large2 {
+      background-color: green;
+      font-size: 20px;
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+    .large2:hover {
+      background-color: darkgreen;
+    }
+    /* Image upload preview */
+    #image-preview {
+      margin-top: 15px;
+      max-width: 300px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1 align="center"><u><b><marquee behavior="scroll" direction="right" scrollamount="10">MY PORTFOLIO</marquee></b></u></h1>
+  <hr>
+  <header>
+    <div class="boxes">
+      <div class="navbar">
+        <a href="#Home" class="active">Home</a>
+        <a href="#introduction">Introduction</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+  <br>
+
+  <section id="introduction">
+    <h2 align="center"><u>About me</u></h2>
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+      <!-- About Me Text -->
+      <p style="flex:1; font-size:20px;">
+        Hello! My name is <b>Devansh Dhama</b> and I am currently pursuing my B.Tech from ABES Engineering College in CSE. 
+        I am passionate about cloud engineering and full stack development. I have completed certifications that strengthened my practical knowledge. 
+        I am always eager to explore new technologies and apply them in real projects. 
+        My goal is to become an innovative developer who can create impactful, user-friendly solutions.
+      </p>
+
+      <!-- Profile Image on Right -->
+      <img src="https://via.placeholder.com/200" alt="Profile Picture" 
+           style="width:200px; height:200px; object-fit:cover; border-radius:10px; flex-shrink:0;">
+    </div>
+  </section>
+  <hr>
+
+  <section id="skills">
+    <h1 align="center"><u><b>Technical Skills</b></u></h1>
+    <ul>
+      <li>HTML & CSS for web structuring and styling</li>
+      <li>Python for scripting and problem-solving</li>
+      <li>C & C++ including data structures and algorithms</li>
+      <li>Microsoft Office Suite (Word, PowerPoint, Outlook, Excel)</li>
+    </ul>
+  </section>
+  <hr>
+
+  <section id="projects">
+    <h1 align="center"><u><b>Projects</b></u></h1>
+    <ul>
+      <li>Resume</li>
+      <li>Registration Form</li>
+      <li>Mini Project on Disaster Management</li>
+      <li>Portfolio Website</li>
+    </ul>
+  </section>
+  <hr>
+
+  <div id="me">
+    <h1 align="center"><u><b>Contact</b></u></h1>
+  </div>
+  <div id="contact">
+    <form method="get" action="#">
+      <label for="Name">Enter your Name:</label><br>
+      <input type="text" id="Name" name="Name" placeholder="Enter your Name" class="large"><br>
+
+      <label for="E-mail">Enter your E-Mail:</label><br>
+      <input type="email" id="E-mail" name="E-mail" placeholder="Enter your E-mail" class="large1"><br>
+
+      <label for="message">Enter your message:</label><br>
+      <textarea name="message" rows="4" cols="50" placeholder="Enter your message here..."></textarea><br>
+
+      <!-- Image Upload -->
+      <label for="upload">Upload your image:</label><br>
+      <input type="file" id="upload" accept="image/*"><br>
+      <img id="image-preview" src="#" alt="Image Preview" style="display:none;">
+
+      <input type="submit" value="Submit" class="large2">
+      <br><hr>
+    </form>
+  </div>
+
+  <script>
+    // Image preview function
+    document.getElementById("upload").addEventListener("change", function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.getElementById("image-preview");
+          img.src = e.target.result;
+          img.style.display = "block";
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>
